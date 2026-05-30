@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arbor Vitae &middot; Renewable energy diligence</title>
+<meta name="description" content="Arbor Vitae Group Limited is an independent diligence firm for renewable energy investment. Solar, wind, and battery storage projects assessed for institutional investors and large energy buyers.">
+<meta name="theme-color" content="#1d4a2f">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Arbor Vitae &middot; Renewable energy diligence">
+<meta property="og:description" content="An independent diligence firm for renewable energy investment.">
+<meta property="og:image" content="/logo.png">
+
+<link rel="icon" type="image/png" href="/logo.png">
+<link rel="apple-touch-icon" href="/logo.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink: #1a1a1a;
+  --ink-soft: #404040;
+  --ink-muted: #707070;
+  --forest: #1d4a2f;
+  --forest-soft: #2d6342;
+  --white: #ffffff;
+  --off-white: #fafafa;
+  --border: #e8e8e8;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--white);
+  color: var(--ink);
+  line-height: 1.65;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.serif { font-family: 'Cormorant Garamond', Georgia, serif; }
+
+/* Navigation */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 1.1rem 2rem;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s ease;
+}
+nav.scrolled { border-bottom-color: var(--border); }
+nav .nav-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: flex; justify-content: space-between; align-items: center;
+}
+nav .brand {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  color: var(--forest);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+nav .nav-links { display: flex; gap: 2.5rem; font-size: 0.85rem; }
+nav .nav-links a { color: var(--ink-soft); text-decoration: none; transition: color 0.2s; }
+nav .nav-links a:hover { color: var(--forest); }
+@media (max-width: 700px) { nav .nav-links { display: none; } }
+
+/* Hero — pure white to match the logo */
+.hero {
+  min-height: 100vh;
+  background: var(--white);
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  padding: 6rem 2rem 4rem;
+  text-align: center;
+}
+.hero .mark {
+  max-width: 320px; width: 65%; height: auto;
+  display: block;
+}
+.hero .tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.6rem, 3.4vw, 2.2rem);
+  font-weight: 400;
+  color: var(--ink);
+  max-width: 30ch;
+  margin: 0.5rem auto 1.2rem;
+  line-height: 1.3;
+}
+.hero .subtitle {
+  font-size: 1rem;
+  color: var(--ink-muted);
+  max-width: 48ch;
+  margin: 0 auto 3rem;
+}
+
+.divider {
+  width: 1px; height: 50px; background: var(--border); margin: 2rem auto 0;
+}
+
+/* Sections */
+section { padding: 6rem 2rem; }
+section .container { max-width: 920px; margin: 0 auto; }
+
+.section-label {
+  font-size: 0.7rem;
+  color: var(--forest);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-size: clamp(1.9rem, 3.6vw, 2.6rem);
+  color: var(--ink);
+  margin-bottom: 2rem;
+  line-height: 1.25;
+  max-width: 26ch;
+}
+
+.section-body {
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  max-width: 60ch;
+}
+.section-body p { margin-bottom: 1.2rem; }
+.section-body p:last-child { margin-bottom: 0; }
+
+/* Section variants */
+.alt-bg { background: var(--off-white); }
+
+/* Capabilities grid */
+.capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+.capability {
+  border-top: 1px solid var(--border);
+  padding-top: 1.5rem;
+}
+.capability-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.45rem;
+  color: var(--forest);
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+.capability-detail {
+  font-size: 0.97rem;
+  color: var(--ink-soft);
+  line-height: 1.65;
+}
+
+/* Footer */
+footer {
+  background: var(--forest);
+  color: var(--off-white);
+  padding: 4rem 2rem 2rem;
+  text-align: center;
+}
+footer .footer-inner { max-width: 800px; margin: 0 auto; }
+footer .footer-mark {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+footer .footer-tag {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  font-style: italic;
+  color: rgba(250, 250, 250, 0.78);
+  margin-bottom: 3rem;
+}
+footer .contact-block { margin-bottom: 3rem; }
+footer .contact-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(250, 250, 250, 0.6);
+  margin-bottom: 0.7rem;
+}
+footer .contact-email {
+  font-size: 1.15rem;
+  color: var(--off-white);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(250, 250, 250, 0.35);
+  padding-bottom: 2px;
+  transition: border-color 0.2s;
+}
+footer .contact-email:hover { border-bottom-color: var(--off-white); }
+footer .legal {
+  font-size: 0.78rem;
+  color: rgba(250, 250, 250, 0.5);
+  padding-top: 2rem;
+  border-top: 1px solid rgba(250, 250, 250, 0.15);
+}
+footer .legal p { margin-bottom: 0.3rem; }
+
+/* Entrance */
+.fade-in {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <div class="brand">Arbor Vitae</div>
+    <div class="nav-links">
+      <a href="#what">What we do</a>
+      <a href="#how">How we work</a>
+      <a href="#founder">Founder</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <img class="mark" src="logo.png" alt="Arbor Vitae">
+  <p class="tagline">Independent diligence for renewable energy.</p>
+  <p class="subtitle">We assess solar, wind, and battery storage projects for institutional investors and large energy buyers.</p>
+  <div class="divider"></div>
+</section>
+
+<section id="what">
+  <div class="container">
+    <div class="section-label">What we do</div>
+    <h2 class="section-title">An independent diligence firm for renewable energy investment.</h2>
+    <div class="section-body">
+      <p>Arbor Vitae Group Limited assesses solar, wind, and battery storage projects for the people who buy them, finance them, or rely on the energy they produce. We review the technical engineering, the financial structure, the legal position, the environmental performance, and the fit with the buyers who actually take the power.</p>
+      <p>Each engagement produces a structured assessment with clear findings, full data sources, and confidence levels — usable for investment committee, lender diligence, regulatory submission, or contract negotiation.</p>
+      <p>The firm operates from the United Kingdom. Engagements span the UK, Italy, Morocco, and the Caribbean.</p>
+    </div>
+  </div>
+</section>
+
+<section class="alt-bg" id="how">
+  <div class="container">
+    <div class="section-label">How we work</div>
+    <h2 class="section-title">Six dimensions of asset assessment.</h2>
+    <div class="section-body">
+      <p>Every project is scored across six dimensions. Each dimension has a defined methodology, structured outputs, and an audit trail. The combined result is an asset assessment that institutional buyers, lenders, and regulators can rely on.</p>
+    </div>
+    <div class="capabilities-grid">
+      <div class="capability">
+        <div class="capability-name">Technical</div>
+        <div class="capability-detail">How much energy the project produces, how reliably, and how long it will last. Resource modelling, equipment review, grid connection, performance over time.</div>
+      </div>
+      <div class="capability">
+        <div class="capability-name">Financial</div>
+        <div class="capability-detail">Does the project make money. Revenue from contracted and market sales, costs over the asset lifetime, returns to investors and lenders.</div>
+      </div>
+      <div class="capability">
+        <div class="capability-name">Legal</div>
+        <div class="capability-detail">Clean title, valid planning consent, durable contracts, no surprises. Land, permits, grid connection agreements, offtake contracts, change-of-control terms.</div>
+      </div>
+      <div class="capability">
+        <div class="capability-name">Environmental &amp; Social</div>
+        <div class="capability-detail">Carbon performance, ecological impact, community acceptance. Compliance with current and emerging environmental standards. Social licence to operate.</div>
+      </div>
+      <div class="capability">
+        <div class="capability-name">Machine Trust&trade;</div>
+        <div class="capability-detail">A new buyer class is emerging: large AI computing operations that consume electricity continuously and need specific properties from their power supply. Machine Trust scores whether a project matches what those buyers actually need.</div>
+      </div>
+      <div class="capability">
+        <div class="capability-name">Data &amp; Reporting</div>
+        <div class="capability-detail">Structured, machine-readable assessment reports with full source citations, confidence intervals, and update history. Designed for institutional use and integration with emerging digital reporting standards.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="founder">
+  <div class="container">
+    <div class="section-label">Founder</div>
+    <h2 class="section-title">Founded and led by Anna Halpern-Lande.</h2>
+    <div class="section-body">
+      <p>Anna Halpern-Lande has invested in renewable energy infrastructure for two decades — solar, wind, and battery storage projects across the United Kingdom, Italy, Morocco, and the Caribbean. She founded Arbor Vitae Group Limited in April 2026 to extend that investment practice into an independent diligence firm.</p>
+      <p>The firm is built around the idea that asset assessment in renewable energy is becoming more important, not less, as the buyer base broadens from utilities and corporates to AI computing operators, and as new reporting and verification requirements emerge from regulators on both sides of the Atlantic.</p>
+      <p>Arbor Vitae's intellectual property includes three provisional patent applications in preparation, planned trademark registrations, and methodology documents being prepared for publication.</p>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="footer-inner">
+    <div class="footer-mark">Arbor Vitae</div>
+    <div class="footer-tag">Independent diligence for renewable energy.</div>
+
+    <div class="contact-block">
+      <div class="contact-label">Enquiries</div>
+      <a class="contact-email" href="mailto:anna@arborvitae.ai">anna@arborvitae.ai</a>
+    </div>
+
+    <div class="legal">
+      <p>Arbor Vitae Group Limited &middot; Registered in England and Wales</p>
+      <p>&copy; 2026 Arbor Vitae Group Limited</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 20) nav.classList.add('scrolled');
+  else nav.classList.remove('scrolled');
+});
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('section').forEach(el => {
+  el.classList.add('fade-in');
+  observer.observe(el);
+});
+</script>
+
+</body>
+</html>
